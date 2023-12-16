@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 18px;
+
+        }
+        .tooltip{
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 0 ;
+        }
+         a:hover{
+            text-decoration: none;
+         }
+         a[data-tooltip]{
+            border-bottom: 1px dotted #333;
+            position:relative;
+         }
+         a[data-tooltip]::before{
+            content: attr(data-tooltip);
+            position: absolute;
+            background-color: #333;
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            padding: 3px 3px;
+            border-radius: 4px;
+            bottom: 100%;
+            line-height: 1rem;
+            left: -50%; /*Lớp phủ sẽ có chiều dài và chiều rộng theo thẻ a*/
+            right: -50%;
+            display: none;
+            transform: scale(0);
+         }
+         a[data-tooltip]::after{
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #333;
+            left: calc(50% - 2.5px) ;
+            bottom: calc(100% - 2.5px);
+            display: none;
+         }
+         a[data-tooltip]:hover::before,
+         a[data-tooltip]:hover::after{
+            display: block;
+            transform: scale(1);
+         }
+         
+    </style>
+</head>
+<body>
+    <div class="tooltip">
+        <h1>Tạo Tooltip bằng Css HTML</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae eaque modi dicta facilis harum doloribus sequi atque nisi neque id, obcaecati ipsam enim voluptates autem inventore ut dolorum? Rerum, aliquam.</p>
+        <p>Ipsa molestiae aperiam, <a href="#"data-tooltip="Lê Minh Trung đẹp trai">Lê Minh Trung</a> numquam odit doloribus quas hic, deserunt architecto excepturi accusamus esse. Vel cupiditate eaque aperiam numquam dolorem quidem velit porro aliquid voluptate? Asperiores mollitia atque animi maiores dolorum.</p>
+        <p>Unde ratione in assumenda eaque at libero culpa odio perferendis ex expedita tempore adipisci ipsam aliquid, voluptates laudantium facere neque corrupti debitis! Odit harum impedit ratione fuga, ipsum quibusdam. Corporis.</p>
+        <p>Labore odio sed tempora sequi cupiditate quam a animi perspiciatis, magnam, officia laboriosam quaerat corporis numquam ex, porro eligendi! Soluta culpa quidem, mollitia eligendi non aliquid vel quo repellat voluptate!</p>
+        <p>Numquam distinctio minima natus praesentium eos cumque quia illo quis eaque, doloribus alias voluptatum animi dicta temporibus tenetur repellat provident. Aut recusandae blanditiis doloribus repudiandae excepturi reprehenderit ea quod placeat!</p>
+        <p>Fugiat odio fugit facilis saepe officia modi iste optio. Quam dolorum unde possimus vel iure, culpa tenetur hic quibusdam libero harum velit totam officia aperiam quasi reprehenderit quaerat iste repellat!</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 5% 0 0 2px;
+        }
+        table th{
+            width: 200px;
+            border: none;
+            background-color:#2ecc71 ;
+            height: 25px;
+            line-height: 25px;
+        }
+        table,th,td{
+            border-bottom: 2px solid black;
+        }
+        table td{
+            text-align: center;
+        }
+        #btnOpen{
+            border: none;
+            background: none;
+            outline: none;
+            cursor: pointer;
+            color: #27ae60;
+        }
+        .Medal {
+            height: 100vh;
+            background-color:rgba(0,0,0,0.5) ;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+           
+            display: none;
+        }
+        .popup{
+            background-color: white;
+            max-width: 500px;
+            height: 350px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+           
+        }
+        .popup h1{
+            padding: 20px;
+            text-align: center;
+            color: #27ae60;
+        }
+        input{
+            width: 400px;
+            margin-left: 50px;
+            height: 25px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        label{
+            padding-left: 50px;
+            font-size: 18px;
+        }
+        #btnClose{
+            margin: 20px 0px 0px 220px;
+            border: none;
+            outline: none;
+            background-color: #27ae60;
+            width: 60px;
+            height: 30px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <table>
+        <tr>
+            <th colspan="2">Danh sách hàng tháng</th>
+        </tr>
+        <tr>
+            <td><button id="btnOpen"><i class="fa-solid fa-plus"></i></button></td>
+            <td>Tháng diễn ra</td>
+        </tr>
+    </table>
+    </div>
+<div class="Medal">
+    <div class="popup">
+        <h1>TẠO ĐỢT ĐÓNG BHXH</h1>
+        <form action="">
+            <label for="input">Tên đợt đóng BHXH</label><br><br>
+            <input type="text" id="input" name="input"><br><br><br>
+            <label for="input1">Thời gian bắt đầu</label><br><br>
+            <input type="date" id="input1" name="input1"><br><br>
+            <button id="btnClose">Gửi</button>
+        </form>
+    </div>
+</div>
+<script>
+    var btnOpen = document.getElementById('btnOpen');
+    var medal = document.querySelector('.Medal');
+    var btnClose = document.getElementById('#btnClose');
+    
+    btnOpen.addEventListener('click', appear);
+        function appear() {
+            medal.style.display = "block"
+        }
+    btnClose.addEventListener('click',remove);
+        function remove(){
+            medal.style.display="none"
+        }
+    medal.addEventListener('click',remove1);
+        function remove1(e){
+            if( e.target.classname=='Medal'){
+                medal.style.display="none";
+            }
+        }
+    
+</script>
+</body>
+</html>

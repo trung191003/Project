@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/day2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.datatables.net/plug-ins/1.10.20/sorting/enum.js"></script>
+    <title>Popup</title>
+</head>
+<body>
+    <button class="open-medal-btn">Open Medal</button>
+<div class="medal hide">
+    <div class="medal_inner">
+        <!--Phần đầu của Medal-->
+        <div class="medal_header">
+            <p>Welcome to my home</p>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <!--Phần đầu của Medal-->
+        
+        <!--Phần thân của Medal-->
+        <div class="medal_body">
+            Đây là phần body của medal
+        </div>
+        <!--Phần thân của Medal-->
+        
+        <div class="medal_footer">
+            <button>Close</button>
+        </div>
+    </div>
+</div>
+<script>
+    var btnOpen = document.querySelector('open-medal-btn');
+    var modal = document.querySelector('modal');
+    var btnClose =document.querySelector('modal_footer button');
+    var iconClose = document.querySelector('modal_header i');
+    function toggleModal(){
+        modal.classList.toggle('hide')
+    }
+    btnOpen.addEventListener('click',toggleModal)
+</script>
+    
+</body>
+</html>

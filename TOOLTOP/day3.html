@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Tooltip</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+      
+        .Text{
+            color: #333;
+            position: relative;
+            display: inline-block;
+            left: 43.5%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            color: black;
+            
+        }
+        #Tooltip{
+            
+            height: 350px;
+            width: 400px;
+            background-color: white;
+            padding: 20px 0 0 10px;
+            position: absolute;
+            left: 40%;
+            top: 5%;
+            border: 1px solid black;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            color:black;
+            box-shadow:2px 2px 10px 2px #7f8c8d ;
+            border-radius: 6px;
+            font-weight: 500px;
+          
+        }
+        #Tooltip::after{
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 100%;
+            width: 20px;
+            height: 20px;
+            top:-10.9px;
+            transform: translateX(-90%);
+            border-right: 1px solid black ;
+            border-top: 1px solid black ;
+            background-color: #40d3b6;
+            transform: rotate(-45deg);
+            
+
+        
+        }
+       
+       
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form div {
+            display: flex;
+            align-items: center; 
+            margin-bottom: 10px;
+        }
+        label {
+            width: 80px; 
+        }
+        input{
+            width: 200px;
+        }
+        #date input {
+            width: 100px;
+             margin-right: 10px;
+        }
+        button{
+            margin-left: 45%;
+            margin-top: 10px;
+            border: none;
+            outline: none;
+            background-color: #28c6a7;
+            color: white;
+            cursor: pointer;
+            padding: 7px;
+            border-radius: 4px;
+        }
+        .header{
+            display: flex;
+            justify-content: center;
+            margin-top: -20px;
+            margin-left: -10px;
+            background-color: #40d3b6;
+            width: 398px;
+            border-top-right-radius: 6px;
+            border-top-left-radius: 6px;
+            color: black;
+            padding: 7px;
+        
+        }
+    .table1{
+        padding-top: 10px;
+    }
+        
+</style>
+</head>
+<body>
+    <div class="Text" id="Text1" >[Sửa]</div>
+    <div id="Tooltip">
+        <div>
+        <form action="">
+            <div class="header">
+            <h2>Nguyễn Văn A</h2>
+            </div>
+            <div class="table table1">
+                <label for="">Số CMND:</label>
+                <input type="text" name="CMND" id="CMND"><br>
+                </div>
+                <br>
+            <div id="date">
+                <label for="Date">Ngày Cấp:</label>
+                <input type="date" name="Date" id="Date">
+                <label for="place">Nơi Cấp:</label>
+                <input type="text" name="place" id="place">
+            </div>
+            <br>
+            <div class="table">
+                <label for="place1">Thường Trú:</label>
+                <input type="text" name="place1" id="place1">
+            </div>
+            <br>
+            <div class="table">
+                <label for="place2">Tạm Trú:</label>
+                <input type="text" name="place2" id="place2">
+            </div>
+            <br>
+            <div class="table">
+                <label for="place3">Nơi Sinh:</label>
+                <input type="text" name="place3" id="place3">
+            </div>
+            <div><button>Lưu</button></div> 
+        </div>
+
+        </form>
+    </div>
+    <script>
+        var Text1 = document.getElementById('Text1');
+        var Tooltip = document.getElementById('Tooltip');
+    
+        Text1.addEventListener('click', function (event) {
+            event.stopPropagation();
+            if (Tooltip.style.visibility === 'hidden' || Tooltip.style.visibility === '') {
+        Tooltip.style.visibility = 'visible';
+        Tooltip.style.opacity = 1;
+            } else {
+        Tooltip.style.visibility = 'hidden';
+        Tooltip.style.opacity = 0;
+    }
+        });
+    
+        document.addEventListener('click', function () {
+            Tooltip.style.visibility = 'hidden';
+            Tooltip.style.opacity = 0;
+        });
+    
+        Tooltip.addEventListener('click', function (event) {
+            event.stopPropagation();
+        });
+    </script>
+</body>
+</html>

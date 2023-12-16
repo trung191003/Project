@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Trang chủ</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header{
+            text-align: center;
+            position: fixed;
+            top: 0 ;
+            left: 0;
+            right: 0;
+            z-index:1;
+        }
+
+        .first-heading{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            width: 100%;
+            height: 75px;
+            background: white;
+            padding-left: 76px;
+            padding-right: 76px;
+            position: relative;
+        }
+        .first-heading .icon-media{
+            margin-left: -400px;
+            line-height: 43px;
+            padding-top: 20px;
+        }
+        .first-heading .btn-search{
+            margin-right: -200px;
+            line-height: 43px;
+            
+        }
+        .first-heading > div {
+            padding-top: 15px;
+        }
+        .first-heading .icon-media a {
+            font-size: 28px;
+            color: #435EA9;
+            
+            
+        }
+        .first-heading .logo{padding: 20px;}
+        .first-heading .logo img  {
+            width: 260px;
+            height: 45px;
+        }
+        .first-heading .btn-search{
+            color: #435EA9;
+            font-size: 25px;
+            padding-top: 20px;
+            padding-left: 160px;
+        }
+        
+        .switch{
+            width: 60px;
+            height: 30px;
+            position: relative;
+            background-color: #DDDDDD;
+            display: inline-block;
+            border-radius: 200px;
+            margin: auto;
+            transition: background-color 0.3s linear;
+            
+        }
+        .switch::after{
+            content: "VI";
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border-radius: 200px;
+            background-color: #878080;
+            left: 1px;
+            top: 0.4px;
+            font-size: 17px;
+            color: black;
+            text-align: center;
+            line-height: 28px;
+            transition: background-color 0.3 linear, transform 0.3 linear;
+        }
+        .switch_btn:checked+ .switch{
+            background-color: #878080;
+        }
+        .switch_btn:checked+ .switch::after{
+            content: "EN";
+            transform: translateX(30px);
+            background-color: white;
+            transition: transform 0.3s linear;
+        }
+        .switch_btn{display: none;}
+        .nav{
+            width: 100%;
+            height: 58px;
+            background-color: #8FC64E;
+            display: flex;
+            line-height: 40px;
+            padding: 10px 200px;
+            padding-left: 300px;
+        }
+        .second-heading .nav li {
+            text-decoration: none;
+            list-style-type: none;
+        }
+        .second-heading .nav li a{
+            color: white;
+            text-decoration: none;
+            padding: 0px 15px;
+            font-size: 21px;
+            display: inline-block;
+            font-weight: 499;
+        }
+        .content{position: relative;}
+        .content .grid-container img {
+            max-width: 100%;
+            height: auto;
+        }
+            
+        
+        .content .grid-container a{
+            position: absolute;
+            bottom: 10px; /* Thay đổi giá trị bottom tùy ý */
+            left: 50%; /* Dịch chuyển sang giữa */
+            transform: translateX(-50%); /* Dịch chuyển ngang giữa */
+            min-width: 250px;
+            display: flex;
+            justify-content: flex-start;
+            background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+            height: 50px;
+            padding-left: 10px; /* Thêm padding nếu cần thiết */
+            padding-right: 10px; 
+
+            
+        }
+        .content .grid-container {
+            margin-top: 90px
+        }
+        @media screen and (min-width:1200px){
+            .content .grid-container img {
+                width: 100%;
+            }
+            .content .grid-container a{
+            position: absolute;
+            bottom: 40px;
+            left: 1394px;
+            min-width: 250px;
+            display: flex;
+            justify-content: flex-start;
+            background: white;
+            border-radius: 1px;
+            height: 70px;
+            color: #649F52;
+            text-decoration: none;
+            line-height: 70px;
+            padding-left: 40px;
+            font-size: 25px;
+            font-style: italic;
+            }
+        }
+        .content .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 48px 32px;
+}
+.content .grid a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.content .grid .services,
+.content .grid .environment {
+    position: relative;
+    overflow: hidden;
+}
+.content .grid .services img.PCCC-img,
+.content .grid .environment img.environment-img {
+    width: 100%;
+    height: auto;
+}
+
+        .grid .services img.environment-img{
+            grid-area: aa;
+        }
+    .grid .services img.environment-img{
+            
+            grid-area: bb;
+    }
+
+        
+    </style>
+</head>
+<body>
+<div class="main">
+    
+
+    <div class="header">
+        <div class="first-heading">
+            <div class="icon-media">
+                <a href="https://www.youtube.com/@DATICO_JSC?"><i class="socials fa-brands fa-youtube"></i></a>&nbsp;
+                <a href="https://www.facebook.com"><i class="socials fab fa-facebook-f"></i></a>
+            </div>
+
+            <div class="logo">
+                <img src="./img/logo1.png" alt="datico images">
+            </div>
+
+            <div class="btn-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                
+                    <input type="checkbox" name="switch-btn" id="switch-input" class="switch_btn">
+                    <label for="switch-input" class="switch"></label>
+                    
+            </div>
+
+        </div>
+        <div class="second-heading">
+            <ul class="nav">
+                <li><a href="">GIỚI THIỆU</a></li>
+                <li><a href="">DỊCH VỤ PCCC</a></li>
+                <li><a href="">DỊCH VỤ BVMT</a></li>
+                <li><a href="">SHOP ONLINE</a></li>
+                <li><a href="">ĐỐI TÁC</a></li>
+                <li><a href="">TIN TỨC</a></li>
+                <li><a href="">LIÊN HỆ</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+        <div class="second-heading">
+
+
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="grid-container">
+            <img src="http://datico.com.vn//images/uploads/website.png" alt="về chúng tôi">
+            <a href="http://datico.com.vn/thong-tin/gioi-thieu/tong-quan.html"><span>Về chúng tôi</span>&nbsp;&nbsp;
+            <div class="arrow-icon"><i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+        </div>
+        <div class="grid">
+            <a href="http://datico.com.vn/thong-tin/dich-vu-pccc.html">
+                <div class="services">
+                    <img src="http://datico.com.vn/images/uploads/dich-vu-pccc.jpg" alt="PCCC" class="PCCC-img">
+                    <h4 class="service-title"></h4>
+                </div>
+               
+            </a>
+            <a href="http://datico.com.vn/thong-tin/dich-vu-bvmt.html">
+                <div class="environment">
+                    <img src="http://datico.com.vn/images/uploads/dich-vu-bvmt.jpg" alt="environment" class="environment-img">
+                    <h4 class="environment"></h4>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    
+
+    <div class="slider">
+
+
+    </div>
+    
+    
+    
+    <div class="footer">
+
+
+    </div>
+</div>
+</body>
+</html>

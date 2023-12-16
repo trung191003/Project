@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" integrity="sha512-siarrzI1u3pCqFG2LEzi87McrBmq6Tp7juVsdmGY1Dr8Saw+ZBAzDzrGwX3vgxX1NkioYNCFOVC0GpDPss10zQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+            background-color: #FFF;
+            width: 99%;
+        
+        }
+        #table1 li {
+            text-align: center;
+            width: 11%;
+            padding-left: 1px;
+        }
+        div #toggle {
+            border-color:#DEB887 ;;
+        }
+        #toggle {
+            padding: 5px;
+            font-size: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-color: #DEB887 ;
+            display: none;
+
+        }
+        #table1 li a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 10px 0px 10px 0px;
+            text-align: center;
+            display: block;
+            border: 1px solid #DEB887;
+            height: 20px;
+            line-height: 20px;
+            color: #CD853F;
+        }
+        #table1 ul li:hover a:hover{
+            background-color: #FFFACD;
+            color: #FFD700;
+        }
+        @media screen and (max-width:760px) {
+            #table1 ul {
+                flex-direction: column;
+                text-align: left;
+                display: none;
+            }
+            #table1 ul li {
+                width: 100%;
+                
+            }
+            #table1 ul li a{
+                text-align: left;
+                border-radius: 5px;
+                padding-left: 50px;
+            }
+            #toggle {
+                display: block;
+                border-color: #DEB887 ;
+            }
+            #table1 li {
+                padding-bottom: 2px;
+            }
+    }
+    
+       </style>
+    <script>
+        $(document).ready(function() {
+            $('#toggle').click(function() {
+                $('ul').slideToggle()
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="table">
+    <div id="table1">
+        <div id="toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href=""><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;&nbsp;Cấu Hình</a></li>
+            <li><a href=""><i class="fa-solid fa-clock"></i>&nbsp;&nbsp;Chấm Công</a></li>
+            <li><a href=""><i class="fa-solid fa-folder"></i>&nbsp;&nbsp;Công Thức</a></li>
+            <li><a href=""><i class="fa-solid fa-hand-holding-dollar"></i>&nbsp;&nbsp;Bảng Lương</a></li>
+            <li><a href=""><i class="fa-solid fa-money-bill"></i>&nbsp;&nbsp;Tạm Ứng</a></li>
+            <li><a href=""><i class="fa-solid fa-piggy-bank"></i>&nbsp;&nbsp;Ký Quỹ</a></li>
+            <li><a href="">&nbsp;<i class="fas fa-receipt"></i>&nbsp;&nbsp;Công Nợ</a></li>
+            <li><a href="">&nbsp;<i class="fa-solid fa-heart"></i>&nbsp;&nbsp;Bảo Hiểm</a></li>
+            <li><a href="">&nbsp;<i class="fa-solid fa-hand-back-fist"></i>&nbsp;&nbsp;Đào Tạo</a></li>
+        </ul>
+    </div>
+</div>
+    
+</body>
+</html>

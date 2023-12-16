@@ -1,0 +1,261 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .title{
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+                background-color: #FACC15;
+                width: 420.8px;
+                border: 1px solid #f1c40f;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 2px 2px;
+            }
+            .title p {
+                color: white;
+                margin-left: 97px;
+            }
+            .title span{
+                position: relative;
+                left: -10px;
+                font-size: 14px;
+                color: white;
+                cursor: pointer;
+            }
+            .tabs{
+                display: flex;
+                flex-wrap: wrap;
+                font-family: sans-serif;
+                background: #FEFCE8;
+                width: 424.6px;
+                height: 270px;
+                position: relative;
+                border: 1px solid #f1c40f;
+            }
+            .tab-label{
+                padding: 5px 10px;
+                cursor: pointer;
+                height: 30px;
+                margin-right: 2px;
+        
+                
+            }
+            .tab-content{
+                order: 1;
+                width: 100%;
+                border-bottom: 3px solid #dddddd;
+                line-height: 1.5;
+                /* display: none; */
+            
+                
+            }
+            .tab-radio{
+                display: none;
+            }
+            .tab-header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px 0px 0px 5px;
+                background:#FEFCE8;
+                border-radius: 4px;
+            
+                border-bottom: none;
+                margin-top: 7px;
+                height: 22px;
+                line-height: 28px;
+            }
+            .tab-label-container {
+                display: flex;
+            }
+            .tab-label:first-of-type {
+                border: 1px solid #f1c40f;
+                border-radius: 5px;
+            }
+        
+        
+            
+            /* Tạo khối */
+            .grid-container{
+                display: grid;
+                grid-template-columns: 170px 120px 50px;
+                grid-template-areas: 
+                "aa bb bb"
+                "cc dd dd"
+                "ee ff ff"
+                "gg hh hh"
+                "ii jj jj"
+                "oo pp pp"
+                ;
+                padding: 10px;
+                background-color:#F7E9B1 ;
+                font-size: 14px;
+                width: 400px;
+                grid-template-rows: repeat(5,35px);
+                padding-top: 20px   ;
+                border-radius: 4px;
+                border: 1px solid #f1c40f;
+                position: absolute;
+                top: 35px;
+                height: 200px;
+                /* display: none; */
+
+            }
+            .item1{grid-area: aa;}
+            .item2{grid-area: bb;}
+            .item3{grid-area: cc;}
+            .item4{grid-area: dd;}
+            .item5{grid-area: ee;}
+            .item6{grid-area: ff;}
+            .item7{grid-area: gg;}
+            .item8{grid-area: hh;}
+            .item9{grid-area: ii;}
+            .item10{grid-area: jj;}
+            .item11{grid-area: pp;}
+            .item2, .item4, .item6, .item8, .item10{padding-left: 15px;}
+            .btn-close{
+                margin-top: 35px;
+                outline: none;
+                border: none;
+                width: 45px;
+                height: 27px;
+                border-radius: 5px;
+                background-color: #FACC15;
+                margin-left: 40px;
+                cursor: pointer;
+            }
+            .grid-container input{
+                border-radius: 2px;
+                border: none;
+                outline: none;
+                padding: 2px;
+            }
+        
+            .grid-container-1{
+                display: grid;
+                grid-template-columns: 170px 120px 50px;
+                grid-template-areas: 
+                "aa bb bb"
+                "cc dd dd"
+                "ee ff ff"
+                ;
+                padding: 10px;
+                background-color:#F7E9B1 ;
+                font-size: 14px;
+                width: 400px;
+                grid-template-rows: repeat(5,35px);
+                padding-top: 20px   ;
+                border-radius: 4px;
+                border: 1px solid #f1c40f;
+                position: absolute;
+                top: 35px;
+                height: 200px;
+                /* display: none; */
+            }
+            .item10{
+                grid-area: aa;
+                margin-left: -15px;
+            }
+            .item20{
+                grid-area: bb;
+            }
+            .item30{
+                grid-area: cc;
+            }
+            .item40{
+                grid-area: dd;
+            }
+            .item50{
+                grid-area: ee;
+            }
+            .item60{
+                grid-area: ff;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <div class="title"> <p>Điều Chuyển Nhân Viên</p><span>X</span></div>
+        <div class="tabs">
+                
+                <div class="tab-header">
+                    <div class="tab-label-container">
+                    <input type="radio" class="tab-radio" onclick="showPanel(0,'#F7E9B1')" name="tab-example" id="tab-1">
+                    <label for="tab-1" class="tab-label">Tài Khoản</label>
+                    </div>
+                    <div class="tab-label-container">
+                    <input type="radio" onclick="showPanel(1,'#F7E9B1')"  class="tab-radio" name="tab-example" id="tab-2">
+                    <label for="tab-2" class="tab-label">Duyệt Phép</label>
+                    </div>
+                </div>
+            <div class="tab-content">
+                <div class="grid-container tab-Panel">
+                    <div class="item1 item">Tài Khoản app định vị:</div>
+                    <div class="item2 item"><input type="text" name="" id=""></div>
+                    <div class="item3 item">Mật khẩu:</div>
+                    <div class="item4 item"><input type="password" name="" id="" placeholder="Nhập mật khẩu tại đây"></div>
+                    <div class="item5 item">Làm việc tại:</div>
+                    <div class="item6 item"><select name="" id="">
+                        <option value="1">Hà Nội</option>
+                        <option value="2">Tp HCM</option>
+                        <option value="3">Vũng Tàu</option>
+                    </select></div>
+                    <div class="item7 item">Theo ca trực:</div>
+                    <div class="item8 item"><input type="datetime-local" name="" id=""></div>
+                    <div class="item9 item">Chụp ảnh khi chấm công: </div>
+                    <div class="item 10 item btn-switch">
+                        <input type="checkbox" id="switch" class="switch-input">
+                        <label for="switch" class="switch"></label>
+                    </div>
+                    <div class="item 11 item "><button class="btn-close">Lưu</button></div>
+                </div>
+                <div class="grid-container-1 tab-Panel">
+                    <div class="item10 #item">Duyệt đi trễ:</div>
+                    <div class="item20 #item"><input type="text" name="" id=""></div>
+                    <div class="item30 #item">Duyệt nghỉ phép:</div>
+                    <div class="item40 #item"><input type="password" name="" id=""></div>
+                    <div class="item50 #item">Duyệt công tác:</div>
+                    <div class="item60 #item"><select name="" id="">
+                        <option value="1">Chọn người duyệt</option>
+                        
+                    </select></div>
+                </div>
+                    
+            </div>
+        </div>
+        <script>
+            var tabButtons = document.querySelectorAll(".tab-header .tab-label-container .tab-label");
+            var tabPanels = document.querySelectorAll(".tab-content .tab-Panel");
+            function showPanel(PanelIndex,colorCode){
+                tabButtons.forEach(function(node){
+                    node.style.background=""
+                    node.style.color="";
+                    node.style.fontWeight = "";
+                });
+                
+                tabButtons[PanelIndex].style.backgroundColor=colorCode;
+                tabButtons[PanelIndex].style.color="Black";
+                tabButtons[PanelIndex].style.fontWeight = "bold";   
+
+                tabPanels.forEach(function(node){
+                    node.style.display="none"
+                    node.style.color="";
+                });
+                tabPanels[PanelIndex].style.display="Grid"
+                tabPanels[PanelIndex].style.backgroundColor="";
+            }
+        </script>
+    </body>
+    </html>

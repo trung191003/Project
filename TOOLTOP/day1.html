@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOLTIPS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #333;
+            margin-left: 40%;
+            margin-top: 15%;
+        }
+        .tooltop a {
+            display: block;
+            width: 100px;
+            border: 1px solid #FFF;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #FFF;
+        }
+        .tooltop span{
+            display: none;
+            margin-top: 20px;
+        }
+        .tooltop:hover span{
+            display: block;
+            width: 200px;
+            padding: 10px 10px;
+            border: 1px solid #FFF;
+            color: #333;
+            margin-left: -50px;
+            background-color: white;
+        }
+        .tooltop:hover::after{
+            content:"";
+            background: white;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            margin-left: 50px;
+            margin-top: -45px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="tooltop"><a href="#">Hover Me !</a> 
+        <span>This is a sample tooltip</span>
+    </div>
+</body>
+</html>
